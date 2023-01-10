@@ -1,0 +1,44 @@
+<div class="container w-3/4 mb-7 mx-auto rounded shadow-xl shadow-gray-500">
+    <form class="text-center 
+    bg-slate-700 text-white mt-3 p-6 pb-8 rounded shadow-2xl">
+        <h1 class="font-medium p-4 text-2xl">{{titulo}}</h1>
+        <hr class="w-1/4 mx-auto">
+      
+        <div class="grid grid-cols-2 gap-2 my-2">
+            <div class="w-2/4 mx-auto mt-5">
+                <div class="mt-3">
+                    <label for="nombre" class="py-4 px-2">Nombre:</label>
+                    <input type="text" class="rounded px-4" id="name" name="nombre"  required [(ngModel)]="nombre">
+                    
+                </div>
+            
+                <div class="mt-3">
+                    <label for="dni" class=" py-4 px-4">DNI:</label>
+                    <input type="text" class="rounded px-4" id="dni" name="dni" required [(ngModel)]="dni">
+                </div>
+            
+                <div class="mt-3">
+                    <label for="" class=" py-4 px-2">Estado Civil:</label>
+                    <select name="Estado" id="Estado" class="text-black rounded px-4" [(ngModel)]="estado">
+                        <option selected disabled>Selecciona</option>
+                        <option value="soltero">Soltero</option>
+                        <option value="casado">Casado</option>
+                        <option value="divorciado">Divorciado</option>
+                        <option value="viudo">Viudo</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            
+                <div class="d-grid gap-2 col-4 float-start">
+            
+                    <button (click)="mostrar()" type="submit" class="bg-green-500 px-3 py-2 mt-3 rounded hover:bg-green-700">Enviar</button>
+                </div>
+                
+            </div>
+            
+            <div class="mt-5">
+                <app-hijo [datosinfo]="datos"></app-hijo>
+            </div>
+        </div>
+    </form>
+</div>
